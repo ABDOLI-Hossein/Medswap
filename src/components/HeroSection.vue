@@ -1,5 +1,6 @@
 <script setup>
 import AppIcon from './AppIcon.vue'
+import { APP_URL } from '../config'
 </script>
 
 <template>
@@ -21,11 +22,11 @@ import AppIcon from './AppIcon.vue'
         </p>
 
         <div class="animate-slide-in mt-8 flex flex-wrap gap-3" style="animation-delay: 360ms">
-          <a href="#demo" class="group inline-flex items-center gap-2 rounded-xl bg-brand-600 px-6 py-3.5 font-semibold text-white shadow-lg shadow-brand-600/30 transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand-700 hover:shadow-xl">
+          <a :href="`${APP_URL}/inscription`" class="group inline-flex items-center gap-2 rounded-xl bg-brand-600 px-6 py-3.5 font-semibold text-white shadow-lg shadow-brand-600/30 transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand-700 hover:shadow-xl">
             Publier une absence
             <AppIcon name="arrow" :size="18" class="transition-transform duration-300 group-hover:translate-x-1" />
           </a>
-          <a href="#remplacants" class="rounded-xl border border-slate-200 bg-white px-6 py-3.5 font-semibold text-slate-800 transition-all duration-300 hover:-translate-y-0.5 hover:border-brand-600 hover:text-brand-600">
+          <a :href="`${APP_URL}/inscription`" class="rounded-xl border border-slate-200 bg-white px-6 py-3.5 font-semibold text-slate-800 transition-all duration-300 hover:-translate-y-0.5 hover:border-brand-600 hover:text-brand-600">
             Je suis remplaçant
           </a>
         </div>
