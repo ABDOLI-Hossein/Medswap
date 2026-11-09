@@ -52,6 +52,7 @@ const features = [
       </div>
 
       <div class="order-1 lg:order-2">
+        <div v-reveal class="mb-6 h-44 w-44 overflow-hidden rounded-full"><img src="/brand/persona-remplacant.png" alt="Médecin remplaçant" class="h-full w-full origin-center scale-[1.08] object-cover" /></div>
         <p v-reveal class="flex items-center gap-2 text-xs font-semibold tracking-widest text-brand-600 uppercase">
           <AppIcon name="users" :size="16" /> Médecin remplaçant
         </p>

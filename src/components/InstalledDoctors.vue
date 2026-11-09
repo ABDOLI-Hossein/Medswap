@@ -21,6 +21,7 @@ const doctors = [
   <section id="medecins-installes" class="scroll-mt-20 bg-slate-50 py-24">
     <div class="mx-auto grid max-w-6xl items-center gap-16 px-6 lg:grid-cols-2">
       <div>
+        <div v-reveal class="mb-6 h-44 w-44 overflow-hidden rounded-full"><img src="/brand/persona-installe.png" alt="Médecin installé" class="h-full w-full origin-center scale-[1.08] object-cover" /></div>
         <p v-reveal class="flex items-center gap-2 text-xs font-semibold tracking-widest text-brand-600 uppercase">
           <AppIcon name="stethoscope" :size="16" /> Médecin installé
         </p>

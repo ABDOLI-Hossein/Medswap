@@ -28,15 +28,15 @@ const steps = {
           </h2>
         </div>
 
-        <div v-reveal class="relative inline-flex self-start rounded-xl bg-slate-100 p-1 text-sm font-semibold">
+        <div v-reveal class="relative grid grid-cols-2 self-start rounded-xl bg-slate-100 p-1.5 text-sm font-semibold">
           <span
-            class="absolute inset-y-1 w-[calc(50%-0.25rem)] rounded-lg bg-white shadow-sm transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]"
+            class="absolute inset-y-1.5 left-1.5 w-[calc(50%-0.375rem)] rounded-lg bg-white shadow-sm transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]"
             :class="role === 'installe' ? 'translate-x-0' : 'translate-x-full'"
           />
-          <button class="relative z-10 rounded-lg px-4 py-2 transition-colors" :class="role === 'installe' ? 'text-ink' : 'text-slate-500'" @click="role = 'installe'">
+          <button class="relative z-10 whitespace-nowrap rounded-lg px-6 py-2.5 transition-colors" :class="role === 'installe' ? 'text-ink' : 'text-slate-500'" @click="role = 'installe'">
             Médecin installé
           </button>
-          <button class="relative z-10 rounded-lg px-4 py-2 transition-colors" :class="role === 'remplacant' ? 'text-ink' : 'text-slate-500'" @click="role = 'remplacant'">
+          <button class="relative z-10 whitespace-nowrap rounded-lg px-6 py-2.5 transition-colors" :class="role === 'remplacant' ? 'text-ink' : 'text-slate-500'" @click="role = 'remplacant'">
             Médecin remplaçant
           </button>
         </div>

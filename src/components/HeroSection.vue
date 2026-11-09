@@ -1,15 +1,5 @@
 <script setup>
 import AppIcon from './AppIcon.vue'
-
-const days = ['Lun.', 'Mar.', 'Mer.', 'Jeu.', 'Ven.', 'Sam.', 'Dim.']
-const cells = [
-  [28, 29, 30, 1, 2, 3, 4],
-  [5, 6, 7, 8, 9, 10, 11],
-  [12, 13, 14, 15, 16, 17, 18],
-  [19, 20, 21, 22, 23, 24, 25],
-  [26, 27, 28, 29, 30, 31, 1],
-]
-const isOther = (n, row) => (row === 0 && n > 20) || (row === 4 && n < 10)
 </script>
 
 <template>
@@ -18,15 +8,10 @@ const isOther = (n, row) => (row === 0 && n > 20) || (row === 4 && n < 10)
     <div class="pointer-events-none absolute -top-40 right-0 h-[32rem] w-[32rem] rounded-full bg-brand-100/60 blur-3xl animate-float" />
     <div class="pointer-events-none absolute -bottom-20 -left-20 h-72 w-72 rounded-full bg-brand-50 blur-3xl animate-float-delayed" />
 
-    <div class="relative mx-auto grid max-w-6xl items-center gap-16 px-6 lg:grid-cols-2">
+    <div class="relative mx-auto grid max-w-6xl items-center gap-16 px-6 lg:grid-cols-2 lg:gap-28">
       <!-- Texte -->
       <div>
-        <span class="animate-slide-in inline-flex items-center gap-2 rounded-full bg-brand-50 px-3 py-1 text-xs font-semibold tracking-wide text-brand-700 uppercase" style="animation-delay: 0ms">
-          <span class="h-1.5 w-1.5 rounded-full bg-brand-600 animate-pulse" />
-          Nouveau · Remplacements médicaux partout en France
-        </span>
-
-        <h1 class="animate-slide-in mt-6 text-5xl leading-[1.05] font-extrabold tracking-tight text-ink sm:text-6xl lg:text-7xl" style="animation-delay: 120ms">
+        <h1 class="animate-slide-intext-5xl leading-[1.05] font-extrabold tracking-tight text-ink sm:text-6xl lg:text-7xl" style="animation-delay: 120ms">
           Vos remplacements médicaux,
           <span class="text-shimmer">simplement.</span>
         </h1>
@@ -53,68 +38,9 @@ const isOther = (n, row) => (row === 0 && n > 20) || (row === 4 && n < 10)
         </ul>
       </div>
 
-      <!-- Maquette calendrier -->
+      <!-- Illustration -->
       <div class="animate-slide-in relative" style="animation-delay: 300ms">
-        <div class="relative rounded-2xl border border-slate-200 bg-white p-5 shadow-2xl shadow-slate-300/50">
-          <div class="flex items-center justify-between border-b border-slate-100 pb-4 text-sm text-slate-500">
-            <span>Espace médecin › <strong class="text-ink">Tableau de bord</strong></span>
-            <span class="flex h-7 w-7 items-center justify-center rounded-full bg-brand-100 text-xs font-bold text-brand-700">AB</span>
-          </div>
-
-          <div class="mt-4 grid grid-cols-3 gap-3">
-            <div v-for="s in [{ n: 3, l: 'Périodes d’absence', c: 'text-ink' }, { n: 2, l: 'Remplacements confirmés', c: 'text-brand-600' }, { n: 1, l: 'Période à pourvoir', c: 'text-amber-700' }]" :key="s.l" class="rounded-xl border border-slate-100 bg-slate-50 p-3">
-              <p class="text-2xl font-extrabold" :class="s.c">{{ s.n }}</p>
-              <p class="text-[11px] leading-tight text-slate-500">{{ s.l }}</p>
-            </div>
-          </div>
-
-          <div class="mt-4 rounded-xl border border-slate-100 p-3">
-            <div class="mb-2 flex justify-between text-xs">
-              <span class="font-semibold text-ink">Vos absences &amp; remplacements</span>
-              <span class="text-slate-400">Octobre 2026</span>
-            </div>
-            <div class="grid grid-cols-7 gap-y-1 text-center text-[10px] text-slate-400">
-              <span v-for="d in days" :key="d" class="py-1 uppercase">{{ d }}</span>
-              <template v-for="(row, r) in cells" :key="r">
-                <span
-                  v-for="(n, c) in row"
-                  :key="`${r}-${c}`"
-                  class="py-1.5 text-xs"
-                  :class="[
-                    isOther(n, r) ? 'text-slate-300' : 'text-slate-700',
-                    n === 5 && r === 1 ? 'mx-auto flex h-6 w-6 items-center justify-center rounded-full bg-brand-600 font-bold text-white' : '',
-                  ]"
-                >{{ n }}</span>
-              </template>
-            </div>
-            <div class="mt-2 space-y-1.5">
-              <div class="animate-slide-in rounded-md bg-brand-50 px-2 py-1.5 text-[11px] font-medium text-brand-700" style="animation-delay: 900ms">
-                5–9 oct. · Dr Julien Moreau · <span class="font-bold">Confirmé</span>
-              </div>
-              <div class="animate-slide-in rounded-md bg-amber-50 px-2 py-1.5 text-[11px] font-medium text-amber-800" style="animation-delay: 1050ms">
-                19–23 oct. · Congés · Remplaçant recherché
-              </div>
-            </div>
-          </div>
-
-          <!-- Badge flottant -->
-          <div class="absolute -top-4 right-4 flex items-center gap-2 rounded-lg bg-ink px-3 py-2 text-xs font-medium text-white shadow-lg animate-float">
-            <AppIcon name="check" :size="14" stroke-width="2.5" class="text-emerald-400" />
-            Confirmé dans les deux calendriers
-          </div>
-        </div>
-
-        <!-- Notification flottante -->
-        <div class="absolute -bottom-6 -left-6 flex items-center gap-3 rounded-xl border border-slate-100 bg-white p-3 pr-5 shadow-xl animate-float-delayed sm:-left-10">
-          <span class="relative flex h-9 w-9 items-center justify-center rounded-lg bg-brand-50 text-brand-600">
-            <AppIcon name="bell" :size="18" />
-            <span class="absolute inset-0 rounded-lg border border-brand-400 animate-pulse-ring" />
-          </span>
-          <div>
-            <p class="text-xs font-semibold text-ink">Nouvelle mission compatible</p>
-            <p class="text-[11px] text-slate-500">Lyon · 10 → 24 novembre</p>
-          </div>
-        </div>
+        <img src="/brand/hero-poignee-de-main-transparent.png" alt="Deux médecins se serrent la main, calendrier validé" class="mx-auto w-full max-w-lg animate-float" />
       </div>
     </div>
 

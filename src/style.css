@@ -1,13 +1,27 @@
 @import "tailwindcss";
 
+/* Charte graphique MedSwap */
 @theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  --color-brand-50: #eff6ff;
-  --color-brand-100: #dbeafe;
-  --color-brand-500: #3b82f6;
-  --color-brand-600: #2563eb;
-  --color-brand-700: #1d4ed8;
-  --color-ink: #0f1d36;
+  --font-sans: "Poppins", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  /* Bleu médical #0B5ED7 (couleur principale) */
+  --color-brand-50: #e6f3ff;
+  --color-brand-100: #cfe3fb;
+  --color-brand-200: #a6cbf5;
+  --color-brand-400: #4a8fe6;
+  --color-brand-500: #1d6fdb;
+  --color-brand-600: #0b5ed7;
+  --color-brand-700: #0a4db0;
+  --color-brand-800: #0a3f8f;
+
+  /* Vert santé #00B894 (couleur secondaire) */
+  --color-health-50: #dffaf1;
+  --color-health-400: #33c9a6;
+  --color-health-500: #00b894;
+  --color-health-600: #009e7e;
+
+  /* Bleu nuit #082A4D (texte, contraste) */
+  --color-ink: #082a4d;
 }
 
 html {
@@ -45,7 +59,7 @@ html {
   animation: slide-in 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 .text-shimmer {
-  background: linear-gradient(90deg, #2563eb 0%, #60a5fa 50%, #2563eb 100%);
+  background: linear-gradient(90deg, #0b5ed7 0%, #00b894 50%, #0b5ed7 100%);
   background-size: 200% auto;
   -webkit-background-clip: text;
   background-clip: text;

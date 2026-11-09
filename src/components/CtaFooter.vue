@@ -15,11 +15,9 @@
     </div>
 
     <footer class="mx-auto mt-16 flex max-w-6xl flex-col items-center justify-between gap-4 border-t border-slate-200 pt-8 text-sm text-slate-500 sm:flex-row">
-      <div class="flex items-center gap-2">
-        <span class="flex h-6 w-6 items-center justify-center rounded-md bg-brand-600 text-white">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14" /></svg>
-        </span>
-        <span class="font-semibold text-ink">MedSwap</span> · Partout en France
+      <div class="flex items-center gap-3">
+        <img src="/brand/logo-horizontal-color.png" alt="MedSwap" class="h-7 w-auto" />
+        <span>· Partout en France</span>
       </div>
       <nav class="flex gap-6">
         <a href="#" class="transition-colors hover:text-brand-600">Mentions légales</a>
