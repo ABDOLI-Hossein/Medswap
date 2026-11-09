@@ -1,6 +1,7 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 import AppIcon from './AppIcon.vue'
+import { APP_URL } from '../config'
 
 const scrolled = ref(false)
 const open = ref(false)
@@ -40,8 +41,8 @@ onBeforeUnmount(() => window.removeEventListener('scroll', onScroll))
       </ul>
 
       <div class="hidden items-center gap-4 lg:flex">
-        <a href="#" class="text-sm font-medium text-slate-700 transition-colors hover:text-brand-600">Se connecter</a>
-        <a href="#demo" class="rounded-lg bg-brand-600 px-4 py-2 text-sm font-semibold text-white shadow-sm shadow-brand-600/30 transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand-700 hover:shadow-lg hover:shadow-brand-600/40">
+        <a :href="`${APP_URL}/connexion`" class="text-sm font-medium text-slate-700 transition-colors hover:text-brand-600">Se connecter</a>
+        <a :href="`${APP_URL}/inscription`" class="rounded-lg bg-brand-600 px-4 py-2 text-sm font-semibold text-white shadow-sm shadow-brand-600/30 transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand-700 hover:shadow-lg hover:shadow-brand-600/40">
           Demander une démo
         </a>
       </div>
@@ -64,7 +65,7 @@ onBeforeUnmount(() => window.removeEventListener('scroll', onScroll))
         <a v-for="l in links" :key="l.href" :href="l.href" class="block py-2 text-slate-700" @click="open = false">
           {{ l.label }}
         </a>
-        <a href="#demo" class="mt-3 block rounded-lg bg-brand-600 px-4 py-2.5 text-center font-semibold text-white" @click="open = false">
+        <a :href="`${APP_URL}/inscription`" class="mt-3 block rounded-lg bg-brand-600 px-4 py-2.5 text-center font-semibold text-white" @click="open = false">
           Demander une démo
         </a>
       </div>
