@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+/* Charte graphique MedSwap */
+@theme inline {
+  --font-sans: var(--font-poppins);
+
+  /* Couleurs principales */
+  --color-brand: #0b5ed7; /* Bleu médical : confiance, sérieux, fiabilité */
+  --color-brand-hover: #0a4db0;
+  --color-brand-soft: #e6f3ff; /* Bleu clair : clarté, accessibilité, modernité */
+
+  /* Couleurs secondaires */
+  --color-health: #00b894; /* Vert santé : accompagnement, fluidité */
+  --color-health-hover: #009e7e;
+  --color-health-soft: #dffaf1; /* Vert clair : mise en avant, états positifs */
+
+  --color-ink: #082a4d; /* Bleu nuit : contraste, lisibilité */
+  --color-muted: #6b7280; /* Gris : informations secondaires */
+  --color-line: #dfe7f0;
+  --color-line-strong: #c4d0dc;
+  --color-surface: #eef2f7; /* Gris clair : fonds, sections, cartes */
+
+  --color-amber-soft: #fdf3e1;
+  --color-amber-ink: #9a6410;
+}
+
+body {
+  background: #ffffff;
+  color: var(--color-ink);
+}

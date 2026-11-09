@@ -27,11 +27,8 @@ onBeforeUnmount(() => window.removeEventListener('scroll', onScroll))
     :class="scrolled ? 'bg-white/85 shadow-sm backdrop-blur-md' : 'bg-white/0'"
   >
     <nav class="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
-      <a href="#top" class="group flex items-center gap-2 font-bold text-ink">
-        <span class="flex h-8 w-8 items-center justify-center rounded-lg bg-brand-600 text-white transition-transform duration-300 group-hover:rotate-90">
-          <AppIcon name="plus" :size="18" stroke-width="2.5" />
-        </span>
-        MedSwap
+      <a href="#top" class="flex items-center" aria-label="MedSwap, retour en haut de page">
+        <img src="/brand/logo-horizontal-color.png" alt="MedSwap" class="h-9 w-auto transition-transform duration-300 hover:scale-105" />
       </a>
 
       <ul class="hidden items-center gap-7 text-sm text-slate-600 lg:flex">
